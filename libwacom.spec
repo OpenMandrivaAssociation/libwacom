@@ -6,12 +6,12 @@
 
 Name:		libwacom
 Summary:	A library to identify wacom tablets
-Version:	0.4
+Version:	0.5
 Release:	1
 Group:		Development/X11
 License:	MIT
 URL:		http://sourceforge.net/projects/linuxwacom/
-Source0:	http://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:	http://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gudev-1.0)
 
@@ -53,6 +53,7 @@ rm -f %{buildroot}%{_libdir}/*.la
 
 %files
 %{_datadir}/libwacom
+%{_bindir}/libwacom-list-local-devices
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
