@@ -1,16 +1,14 @@
-%define major		2
-%define libname		%mklibname wacom %{major}
-%define develname	%mklibname wacom -d
+%define major	2
+%define libname	%mklibname wacom %{major}
+%define devname	%mklibname wacom -d
 
-%define url_ver	%(echo %{version}|cut -d. -f1,2)
-
-Name:		libwacom
 Summary:	A library to identify wacom tablets
+Name:		libwacom
 Version:	0.7.1
-Release:	1
+Release:	2
 Group:		Development/X11
 License:	MIT
-URL:		http://sourceforge.net/projects/linuxwacom/
+Url:		http://sourceforge.net/projects/linuxwacom/
 Source0:	http://downloads.sourceforge.net/project/linuxwacom/%{name}/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gudev-1.0)
@@ -30,13 +28,13 @@ libwacom is a library to identify wacom tablets and their model-specific
 features. It provides easy access to information such as "is this a built-in
 on-screen tablet", "what is the size of this model", etc.
 
-%package -n %{develname}
+%package -n %{devname}
 Summary:	Development files for %{name}
 Group:		Development/X11
 Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 
-%description -n %{develname}
+%description -n %{devname}
 Development files for %{name}.
 
 %prep
@@ -49,16 +47,15 @@ Development files for %{name}.
 
 %install
 %makeinstall_std
-rm -f %{buildroot}%{_libdir}/*.la
 
 %files
 %{_datadir}/libwacom
 %{_bindir}/libwacom-list-local-devices
 
 %files -n %{libname}
-%{_libdir}/*.so.%{major}*
+%{_libdir}/libwacom.so.%{major}*
 
-%files -n %{develname}
+%files -n %{devname}
 %{_libdir}/*.so
 %{_includedir}/*
 %{_libdir}/pkgconfig/*.pc
