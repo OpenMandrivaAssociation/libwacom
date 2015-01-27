@@ -1,11 +1,11 @@
-%define major	2
-%define libname	%mklibname wacom %{major}
-%define devname	%mklibname wacom -d
+%define major 2
+%define libname %mklibname wacom %{major}
+%define devname %mklibname wacom -d
 
 Summary:	A library to identify wacom tablets
 Name:		libwacom
-Version:	0.10
-Release:	2
+Version:	0.11
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://sourceforge.net/projects/linuxwacom/
@@ -41,7 +41,7 @@ Development files for %{name}.
 %setup -q
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static
 %make
 
