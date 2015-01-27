@@ -1,5 +1,3 @@
-removed_sources:
-  libwacom-0.7.1.tar.bz2: 8e8a55c99f2880cf7efd6cdeab11d643c4af80a6
-  libwacom-0.9.tar.bz2: d55a1b675c56d31dee9455eaabd455daf927ee11
+
 sources:
-  libwacom-0.10.tar.bz2: 217b53545ff36646a5199771a8e73f736f98fe9a
+  libwacom-0.11.tar.bz2: 3e258384590d59145961665915c1bc07eb097a77
