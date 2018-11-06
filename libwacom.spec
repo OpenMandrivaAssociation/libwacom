@@ -52,7 +52,8 @@ Development files for %{name}.
 %files
 %{_datadir}/libwacom
 %{_bindir}/libwacom-list-local-devices
-
+%{_mandir}/man1/libwacom-list-local-devices.1.*
+ 
 %files -n %{libname}
 %{_libdir}/libwacom.so.%{major}*
 
