@@ -9,7 +9,7 @@ Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://sourceforge.net/projects/linuxwacom/
-Source0:	http://downloads.sourceforge.net/project/linuxwacom/%{name}/%{name}-%{version}.tar.bz2
+Source0:	https://github.com/linuxwacom/libwacom/releases/download/%{name}-%{version}/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gudev-1.0)
 
