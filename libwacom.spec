@@ -5,7 +5,7 @@
 Summary:	A library to identify wacom tablets
 Name:		libwacom
 Version:	0.32
-Release:	1
+Release:	0.1
 Group:		Development/X11
 License:	MIT
 Url:		http://sourceforge.net/projects/linuxwacom/
@@ -38,16 +38,16 @@ Provides:	%{name}-devel = %{version}-%{release}
 Development files for %{name}.
 
 %prep
-%autosetup -p1
+%setup -q
 
 %build
 %configure \
 	--disable-static
 
-%make_build
+%make
 
 %install
-%make_install
+%makeinstall_std
 
 %files
 %{_datadir}/libwacom
