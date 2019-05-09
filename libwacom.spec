@@ -48,9 +48,14 @@ Development files for %{name}.
 
 %install
 %make_install
+pushd tools
+mkdir -p %{buildroot}/%{_udevrulesdir}/
+./generate-udev-rules > %{buildroot}/%{_udevrulesdir}/65-libwacom.rules
+popd
 
 %files
 %{_datadir}/libwacom
+%{_udevrulesdir}/65-libwacom.rules
 %{_bindir}/libwacom-list-local-devices
 %{_mandir}/man1/libwacom-list-local-devices.1.*
  
