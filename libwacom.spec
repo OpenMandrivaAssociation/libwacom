@@ -4,7 +4,7 @@
 
 Summary:	A library to identify wacom tablets
 Name:		libwacom
-Version:	0.99.901
+Version:	1.0
 Release:	1
 Group:		Development/X11
 License:	MIT
@@ -48,6 +48,7 @@ Development files for %{name}.
 
 %install
 %make_install
+rm -rf %{buildroot}/%{_libdir}/udev/
 pushd tools
 mkdir -p %{buildroot}/%{_udevrulesdir}/
 ./generate-udev-rules > %{buildroot}/%{_udevrulesdir}/65-libwacom.rules
