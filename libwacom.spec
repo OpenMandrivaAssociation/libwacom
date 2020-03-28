@@ -4,7 +4,7 @@
 
 Summary:	A library to identify wacom tablets
 Name:		libwacom
-Version:	1.2
+Version:	1.3
 Release:	1
 Group:		Development/X11
 License:	MIT
