@@ -48,11 +48,11 @@ Development files for %{name}.
 
 %install
 %make_install
-rm -rf %{buildroot}/%{_libdir}/udev/
-pushd tools
-mkdir -p %{buildroot}/%{_udevrulesdir}/
-./generate-udev-rules > %{buildroot}/%{_udevrulesdir}/65-libwacom.rules
-popd
+#rm -rf %{buildroot}/%{_libdir}/udev/
+#pushd tools
+#mkdir -p %{buildroot}/%{_udevrulesdir}/
+#./generate-udev-rules > %{buildroot}/%{_udevrulesdir}/65-libwacom.rules
+#popd
 
 %files
 %{_datadir}/libwacom
