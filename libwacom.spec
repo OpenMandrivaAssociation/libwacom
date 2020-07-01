@@ -56,8 +56,8 @@ install -d ${RPM_BUILD_ROOT}/%{_udevrulesdir}
 %files
 %{_datadir}/libwacom
 #{_udevrulesdir}/65-libwacom.rules
-%{_udevrulesdir}/65-libwacom.rules
-%{_udevhwdbdir}/65-libwacom.hwdb
+/usr/lib/udev/hwdb.d/65-libwacom.hwdb
+/usr/lib/udev/rules.d/65-libwacom.rules
 %{_bindir}/libwacom-list-local-devices
 %{_mandir}/man1/libwacom-list-local-devices.1.*
  
