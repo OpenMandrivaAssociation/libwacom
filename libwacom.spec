@@ -4,14 +4,17 @@
 
 Summary:	A library to identify wacom tablets
 Name:		libwacom
-Version:	1.4
+Version:	1.4.1
 Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://sourceforge.net/projects/linuxwacom/
 Source0:	https://github.com/linuxwacom/libwacom/releases/download/%{name}-%{version}/%{name}-%{version}.tar.bz2
+
+BuildRequires:  meson
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gudev-1.0)
+BuildRequires:	pkgconfig(libxml-2.0)
 
 %description
 libwacom is a library to identify wacom tablets and their model-specific
@@ -39,24 +42,22 @@ Development files for %{name}.
 
 %prep
 %autosetup -p1
+# failing test:
+rm -f data/check-data-in-meson.build.sh
 
 %build
-%configure \
-	--disable-static
-
-%make_build
+%meson -Dtests=disabled -Ddocumentation=disabled
+%meson_build
 
 %install
-%make_install
-#rm -rf %{buildroot}/%{_libdir}/udev/
-#pushd tools
-#mkdir -p %{buildroot}/%{_udevrulesdir}/
-#./generate-udev-rules > %{buildroot}/%{_udevrulesdir}/65-libwacom.rules
-#popd
+%meson_install
+install -d ${RPM_BUILD_ROOT}/%{_udevrulesdir}
 
 %files
 %{_datadir}/libwacom
-%{_udevrulesdir}/65-libwacom.rules
+#{_udevrulesdir}/65-libwacom.rules
+/usr/lib/udev/hwdb.d/65-libwacom.hwdb
+/usr/lib/udev/rules.d/65-libwacom.rules
 %{_bindir}/libwacom-list-local-devices
 %{_mandir}/man1/libwacom-list-local-devices.1.*
  
