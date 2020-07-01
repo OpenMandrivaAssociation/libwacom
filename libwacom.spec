@@ -42,8 +42,6 @@ Development files for %{name}.
 
 %prep
 %autosetup -p1
-
-%build
 # failing test:
 rm -f data/check-data-in-meson.build.sh
 
