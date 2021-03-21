@@ -4,7 +4,7 @@
 
 Summary:	A library to identify wacom tablets
 Name:		libwacom
-Version:	1.7
+Version:	1.9
 Release:	1
 Group:		Development/X11
 License:	MIT
@@ -58,9 +58,9 @@ install -d ${RPM_BUILD_ROOT}/%{_udevrulesdir}
 #{_udevrulesdir}/65-libwacom.rules
 /usr/lib/udev/hwdb.d/65-libwacom.hwdb
 /usr/lib/udev/rules.d/65-libwacom.rules
-%{_bindir}/libwacom-list-local-devices
+%{_bindir}/*
 %{_mandir}/man1/libwacom-list-local-devices.1.*
- 
+
 %files -n %{libname}
 %{_libdir}/libwacom.so.%{major}*
 
