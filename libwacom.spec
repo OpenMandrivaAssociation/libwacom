@@ -15,6 +15,7 @@ BuildRequires:  meson
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gudev-1.0)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libevdev)
 
 %description
 libwacom is a library to identify wacom tablets and their model-specific
