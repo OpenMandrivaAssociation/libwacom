@@ -1,11 +1,12 @@
 %define major 9
-%define libname %mklibname wacom %{major}
+%define oldlibname %mklibname wacom 9
+%define libname %mklibname wacom
 %define devname %mklibname wacom -d
 
 Summary:	A library to identify wacom tablets
 Name:		libwacom
 Version:	2.9.0
-Release:	1
+Release:	2
 Group:		Development/X11
 License:	MIT
 Url:		http://sourceforge.net/projects/linuxwacom/
@@ -26,6 +27,7 @@ on-screen tablet", "what is the size of this model", etc.
 Summary:	A library to identify wacom tablets
 Group:		Development/X11
 Requires:	%{name} >= %{version}-%{release}
+%rename %{oldlibname}
 
 %description -n %{libname}
 libwacom is a library to identify wacom tablets and their model-specific
@@ -52,15 +54,15 @@ rm -f data/check-data-in-meson.build.sh
 
 %install
 %meson_install
-install -d ${RPM_BUILD_ROOT}/%{_udevrulesdir}
+install -d %{buildroot}%{_udevrulesdir}
 
 %files
 %{_datadir}/libwacom
 %{_udevrulesdir}/*.rules
 %{_udevhwdbdir}/*.hwdb
 %{_bindir}/*
-%{_mandir}/man1/libwacom-list-local-devices.1.*
-%{_mandir}/man1/libwacom-list-devices.1.*
+%doc %{_mandir}/man1/libwacom-list-local-devices.1.*
+%doc %{_mandir}/man1/libwacom-list-devices.1.*
 
 %files -n %{libname}
 %{_libdir}/libwacom.so.%{major}*
