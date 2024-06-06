@@ -5,11 +5,11 @@
 
 Summary:	A library to identify wacom tablets
 Name:		libwacom
-Version:	2.11.0
+Version:	2.12.0
 Release:	1
 Group:		Development/X11
 License:	MIT
-Url:		http://sourceforge.net/projects/linuxwacom/
+Url:		https://sourceforge.net/projects/linuxwacom/
 Source0:	https://github.com/linuxwacom/libwacom/releases/download/%{name}-%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:  meson
