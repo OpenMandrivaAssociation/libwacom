@@ -63,6 +63,7 @@ install -d %{buildroot}%{_udevrulesdir}
 %{_bindir}/*
 %doc %{_mandir}/man1/libwacom-list-local-devices.1.*
 %doc %{_mandir}/man1/libwacom-list-devices.1.*
+%doc %{_mandir}/man1/libwacom-show-stylus.1.*
 
 %files -n %{libname}
 %{_libdir}/libwacom.so.%{major}*
